@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GAINS RANKED</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ===== Onboarding ===== -->
+  <div id="onboarding" class="overlay" hidden>
+    <div class="card onboarding-card">
+      <h1>🏆 GAINS RANKED</h1>
+      <p class="sub">Climb the ladder. Skip the grind, lose the rank. Let's set up your season.</p>
+
+      <label>What should we call you?
+        <input id="ob-name" type="text" placeholder="Your name" maxlength="20" />
+      </label>
+
+      <label>Equipment you have access to
+        <div class="chip-row" id="ob-equipment">
+          <button type="button" class="chip active" data-value="none">Bodyweight only</button>
+          <button type="button" class="chip" data-value="dumbbells">+ Dumbbells</button>
+          <button type="button" class="chip" data-value="gym">+ Full gym</button>
+        </div>
+      </label>
+
+      <label>Training days per week
+        <div class="chip-row" id="ob-days">
+          <button type="button" class="chip" data-value="3">3</button>
+          <button type="button" class="chip" data-value="4">4</button>
+          <button type="button" class="chip active" data-value="5">5</button>
+          <button type="button" class="chip" data-value="6">6</button>
+          <button type="button" class="chip" data-value="7">7</button>
+        </div>
+      </label>
+
+      <label>Session length
+        <div class="chip-row" id="ob-length">
+          <button type="button" class="chip" data-value="15">15 min</button>
+          <button type="button" class="chip active" data-value="30">30 min</button>
+          <button type="button" class="chip" data-value="45">45 min</button>
+          <button type="button" class="chip" data-value="60">60 min</button>
+        </div>
+      </label>
+
+      <button id="ob-submit" class="btn btn-primary btn-block">Enter the Ladder →</button>
+    </div>
+  </div>
+
+  <!-- ===== App shell ===== -->
+  <div id="app" hidden>
+    <header class="topbar">
+      <div class="brand">🏆 GAINS RANKED</div>
+      <nav class="tabs">
+        <button class="tab active" data-screen="dashboard">Dashboard</button>
+        <button class="tab" data-screen="history">Match History</button>
+        <button class="tab" data-screen="achievements">Achievements</button>
+        <button class="tab" data-screen="settings">Settings</button>
+      </nav>
+    </header>
+
+    <main>
+      <section id="screen-dashboard" class="screen active"></section>
+      <section id="screen-history" class="screen"></section>
+      <section id="screen-achievements" class="screen"></section>
+      <section id="screen-settings" class="screen"></section>
+      <section id="screen-workout" class="screen"></section>
+    </main>
+  </div>
+
+  <!-- ===== Post-match result modal ===== -->
+  <div id="result-modal" class="overlay" hidden>
+    <div class="card result-card" id="result-card-content"></div>
+  </div>
+
+  <!-- ===== Welcome-back toast ===== -->
+  <div id="toast" class="toast" hidden></div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
